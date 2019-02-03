@@ -4,12 +4,13 @@ import './App.css';
 import {TodoList} from "./TodoList";
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import moment from 'moment';
 
 class App extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { items: [], text: '', priority: '', dueDate: Date.now() };
+        this.state = { items: [], text: '', priority: '', dueDate: moment() };
         this.handleTextChange = this.handleTextChange.bind(this);
         this.handlePriorityChange = this.handlePriorityChange.bind(this);
         this.handleDueDateChange = this.handleDueDateChange.bind(this);
@@ -74,6 +75,7 @@ class App extends Component {
                         <label htmlFor="new-priority" >Priority: </label>
                         <input
                             id="new-priority"
+                            type="number"
                             onChange={this.handlePriorityChange}
                             value={this.state.priority}
                         />

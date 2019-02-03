@@ -8,7 +8,7 @@ export class Todo extends React.Component {
             <tr>
                 <th>{this.props.text}</th>
                 <th>{this.props.priority}</th>
-                <th>{this.props.dueDate}</th>
+                <th>{this.props.dueDate.format('DD-MM-YYYY')}</th>
             </tr>
         );
     }
